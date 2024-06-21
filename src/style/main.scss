@@ -1,0 +1,26 @@
+#root {
+    margin: 2rem 3.5rem;
+}
+
+.bandeau {
+    margin-top: 2rem;
+    position: relative;
+}
+.img-bandeau img {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+    filter:brightness(50%);
+    border-radius: 10px;
+}
+
+.text-bandeau {
+    width: 90%;
+    text-align: center;
+    font-size: 2vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+}

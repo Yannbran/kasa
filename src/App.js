@@ -1,14 +1,24 @@
-import { } from 'react-icons/di';
+
+
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
-import Header from './composants/header/Header'
+import './style/main.scss';
+import Header from './composants/Header';
+import Bandeau from './composants/Bandeau';
+import Gallery from './composants/Gallery';
+import Footer from './composants/Footer';
+
 const router = createBrowserRouter([
+  
   {
     path: '/',
-    element:  <div>
-                   <Header/>
-                   <h1>ok</h1>
-              </div>
-  }
+    element: <>
+              <Header/>
+              <Bandeau/>
+              <Gallery/>
+              <Footer/>
+              </>
+  },
+
 ]);
 
 function App() {

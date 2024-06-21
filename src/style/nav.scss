@@ -1,0 +1,21 @@
+@import './colors.scss';
+.nav {
+    display: flex;
+    flex-shrink: calc(1);
+    justify-content: flex-end;
+    align-items: center;
+    width: 30%;
+    white-space: nowrap;
+}
+
+.link {
+    display: block;
+    margin-left: 4rem;
+    text-decoration: none;
+    color: $color-4;
+}
+
+.link:hover {
+    text-decoration: underline;
+    color: $color-2;
+}
