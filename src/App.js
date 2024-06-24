@@ -2,23 +2,27 @@
 
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import './style/main.scss';
-import Header from './composants/Header';
-import Bandeau from './composants/Bandeau';
-import Gallery from './composants/Gallery';
-import Footer from './composants/Footer';
+import Acceuil from './pages/Acceuil';
+import About from './pages/About';
+import Error from './pages/Error';
+
 
 const router = createBrowserRouter([
   
   {
     path: '/',
-    element: <>
-              <Header/>
-              <Bandeau/>
-              <Gallery/>
-              <Footer/>
-              </>
+    element: <Acceuil/>
   },
-
+  {
+    path: '/src/pages/About',
+    element: <About/>
+  },
+  {
+    path: '*', 
+    element: <Error/>
+                   
+  },
+ 
 ]);
 
 function App() {

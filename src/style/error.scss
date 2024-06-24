@@ -1,0 +1,16 @@
+
+@import './colors.scss';
+.erreur-img {
+    display: flex;
+    justify-content: center;
+    width: 20vw;
+    margin: 3vw auto 2vw auto;
+  
+}
+p {
+    display: flex;
+    justify-content: center;
+    margin: 5vw;
+    color: $color-2;
+    font-size: 1.5vw;
+}

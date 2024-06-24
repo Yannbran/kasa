@@ -1,0 +1,24 @@
+@import 'colors.scss';
+
+.expandable-bar {
+    background-color: $color-2;
+    border-radius: 1vw;
+    margin: 3vw 12vw;
+    height: 5vw;
+    position: relative;
+    .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 5.5vw;
+        margin: 0 2vw;
+        color: $color-1;
+        cursor: pointer;
+        
+    }
+    .expandable-text {
+        background-color: $color-3; 
+        position: absolute;
+        top: 5vw;
+        }
+}
