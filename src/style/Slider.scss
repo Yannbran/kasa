@@ -1,0 +1,84 @@
+@import './colors.scss';
+@import './main.scss';
+
+.slider {
+    position: relative;
+    height: 50vw;
+}
+.slider-img {
+    width: 100%;
+    height: 35vw;
+    object-fit: cover;
+    border-radius: 2vw;
+ 
+} 
+.slider-title-container {
+    display: flex; 
+    justify-content: space-between;
+}
+
+#title {
+    align-content: center;
+    color:  $color-2;
+    font-size: 3vw;
+    margin: 0;
+    width: 70%;
+  }
+
+  #location {
+    justify-content: flex-start; 
+    margin: 0;
+    color: $color-4;
+}
+#tags {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+#tag-name {
+    justify-content: center;
+    align-items: center;
+    width:auto;
+    height: 2vw;
+    color: $color-1;
+    margin-right: 2vw;
+    background-color: $color-2;
+    padding: 0.2vw 2vw;
+    border-radius: 1vw;
+}
+
+.rating {
+    display: flex;
+   align-items: center;
+   font-size: 2vw;
+   margin-bottom: 2vw;
+}
+.star {
+    &.filled {
+      color: $color-2;
+    }
+  
+    &.empty {
+      color: $color-3;
+    }
+  }
+.chevron {
+    position: absolute;
+    top: 25%;
+    font-size: 8vw;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.chevron-left {
+    left: 10px;
+}
+
+.chevron-right {
+    right: 10px;
+}
+.slider-location{
+    justify-content: flex-start;
+    color: $color-4;
+}

@@ -1,24 +1,65 @@
 @import 'colors.scss';
 
-.expandable-bar {
+.bar-container {
     background-color: $color-2;
-    border-radius: 1vw;
-    margin: 3vw 12vw;
-    height: 5vw;
-    position: relative;
+    border-radius: 0.6vw;
+    margin: 2vw 10vw;
+    height: auto; /* Hauteur automatique pour permettre à la barre de s'étendre */
+
+    .bar {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column; /* Permet d'aligner le titre et le texte déroulant verticalement */
+        justify-content: space-between;
+        align-items: center;
+        height: 4vw;
+        color: $color-1;
+    }
+
     .title {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 5.5vw;
-        margin: 0 2vw;
-        color: $color-1;
-        cursor: pointer;
-        
+        width: 95%;
+        margin: 0.5vw;
+        height: 3vw;
+        font-size: 1.5vw;
     }
     .expandable-text {
+        padding: 0.1vw;
         background-color: $color-3; 
-        position: absolute;
-        top: 5vw;
-        }
+        color: $color-4;
+        border-bottom-right-radius: 0.5vw;
+        border-bottom-left-radius: 0.5vw;
+    }
 }
+.expandable-text p {
+    color: $color-4;
+    margin: 1.5vw;
+    font-size: 1.2vw;
+}
+@keyframes rotateDown {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-180deg);
+    }
+  }
+  
+  @keyframes rotateUp {
+    from {
+      transform: rotate(180deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .rotateDown {
+    animation: rotateDown 0.3s linear forwards;
+  }
+  
+  .rotateUp {
+    animation: rotateUp 0.3s linear forwards;
+  }

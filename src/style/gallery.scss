@@ -28,17 +28,19 @@
     
 }
 
-.gallery-card img:hover {
+.gallery-card img:hover, img:hover + h3 {
     transform: scale(1.1);
     transition: transform 0.3s ease-in-out;
     filter:brightness(110%);
 }
 .title-card {
     position: absolute;
+    width: 23vw;
     bottom: 0;
     left: 0;
     color: white;
     font-size: 1.3vw;
     margin-left: 1vw;
     text-shadow: 1px 2px 10px rgba(0, 0, 0, 1);
+   
 }

@@ -1,5 +1,5 @@
 
-import { useMatch } from 'react-router-dom';
+import { useMatch, Link } from 'react-router-dom';
 import '../style/header.scss';
 
 
@@ -10,12 +10,12 @@ export default function Navigation() {
     return (
         <nav>
             <div className='nav'>
-                <a href="/" className='link'>
+                <Link to="/" className='link'>
                     <p className={matchAccueil ? 'link-text link-acceuil' : 'link-text'}>Accueil</p>
-                </a>
-                <a href="/src/pages/About" className='link'>
+                </Link>
+                <Link to="/src/pages/About" className='link'>
                     <p className={matchAbout ? 'link-text link-about' : 'link-text'}>À propos</p>
-                </a>
+                </Link>
             </div>
         </nav>
     )

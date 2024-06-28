@@ -4,13 +4,23 @@
     display: flex;
     justify-content: center;
     width: 20vw;
-    margin: 3vw auto 2vw auto;
+    margin: 3vw auto 3vw auto;
   
 }
 p {
     display: flex;
-    justify-content: center;
-    margin: 5vw;
+    justify-content: center; 
     color: $color-2;
+    font-size: 1.5vw;
+    font-weight: 600;
+    margin-bottom: 3vw;
+}
+.back {
+    display: flex;
+    justify-content: center;
+    color: $color-4;
+    cursor: pointer;
+    margin-bottom: 3vw;
+    font-weight: 600;
     font-size: 1.5vw;
 }
