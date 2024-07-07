@@ -1,9 +1,10 @@
 
-import '../style/about.scss';
+import '../style/collapse.scss';
 import Header from "../components/Header";
-import Bandeau from "../components/Bandeau";
+import Banner from "../components/Banner";
 import Footer from "../components/Footer";
-import ExpBar from "../components/ExpandableBar";
+import Collapse from "../components/Collapse";
+import '../style/about.scss';
 
 export default function About() {
 
@@ -33,12 +34,13 @@ export default function About() {
 	return (
 		<>
 			<Header />
-			<Bandeau />
+			<Banner />
 			<main>
+				
 				{aboutDatas.map(data => {
 					return (
 						<div key={data.id} className="expandable-bar">
-							<ExpBar title={data.title} content={data.content} />
+							<Collapse title={data.title} content={data.content} />
 						</div>
 					)}
 				)}

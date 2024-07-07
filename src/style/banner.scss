@@ -3,7 +3,7 @@
 
 .bandeau {
     display: flex;
-    margin: 0 4vw;
+    margin: 0.5vw 4vw;
 }
     .img-base {
         width: 100%;
@@ -25,8 +25,23 @@
     position: absolute;
     left: 20vw;
     top: 3.3vw;
-    
     font-size: 3.3vw;
+}
 
 
+@media screen and (max-width: 600px) {
+    .bandeau {
+        height: 25vw;
+    }
+    .img-base {
+        height: 100%;
+        border-radius: 10px;
+    }
+    .img-base h1 {
+        width: 58%;
+        font-size: 5.6vw;
+        left: 5vw;
+        top: 1.5vw;
+    }
+    
 }

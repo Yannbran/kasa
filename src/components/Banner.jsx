@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import '../style/bandeau.scss';
+import '../style/banner.scss';
 import ImgBandeau from '../assets/images/Image source 1.png';
 import ImgAbout from '../assets/images/Image source 2.png';
 

@@ -1,5 +1,5 @@
 import Header from '../components/Header';
-import Bandeau from '../components/Bandeau';
+import Banner from '../components/Banner';
 import Gallery from '../components/Gallery';
 import Footer from '../components/Footer';
 
@@ -8,7 +8,7 @@ export default function Acceuil()  {
     return(
             <>
             <Header/>
-            <Bandeau/>
+            <Banner/>
             <Gallery/>
             <Footer/>
             </>

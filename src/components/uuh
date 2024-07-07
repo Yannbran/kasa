@@ -1,0 +1,113 @@
+.expandable-bar {
+    background-color: $color-2;
+    border-radius: 1vw;
+    height: auto;
+    max-width: 100%;
+    margin: 2vw 10vw;
+  }
+  
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    margin: auto;
+    height: 3vw;
+    font-size: 1.5vw;
+    color: $color-1;
+    background-color: $color-2;
+  }
+  
+  .expandable-text {
+    padding: 0.1vw;
+    background-color: $color-3; 
+    color: $color-4;
+    border-bottom-right-radius: 0.5vw;
+    border-bottom-left-radius: 0.5vw;
+    transition: max-height 0.2s ease-in-out; 
+    max-height: 0;
+    overflow: hidden;
+  }
+  
+  .expandable-text.expanded {
+    max-height: 100vh;
+    transition: max-height 1s ease-in-out;
+  }
+  .expandable-text p {
+      color: $color-4;
+      margin: 1.5vw;
+      font-size: 1.2vw;
+      
+  }
+  
+  #description {
+    width: 45%;
+    background-color: $color-2; 
+    border-radius: 0.6vw;
+  }
+  #equipments {
+    width: 45%;
+    background-color: $color-2; 
+    border-radius: 0.6vw;
+  }
+  
+  @keyframes rotateDown {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-180deg);
+    }
+  }
+  
+  @keyframes rotateUp {
+    from {
+      transform: rotate(180deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .rotateDown {
+    animation: rotateDown 0.3s linear forwards;
+  }
+  
+  .rotateUp {
+    animation: rotateUp 0.3s linear forwards;
+  }
+    
+            
+             
+
+
+
+
+
+                       
+export default function Collapse({ title, content}) {
+    const [isOpen, setIsOpen] = useState(false);
+  
+    const handleToggle = (event) => {
+      event.stopPropagation();
+      setIsOpen(!isOpen);
+    };
+  
+    return (
+      <>
+      <div className={`collapse-container ${isOpen ? 'open' : ''}`}>
+          <div className='title'>
+            <h3>{title}</h3>
+            <FontAwesomeIcon icon={faChevronUp} onClick={handleToggle} className={`arrow ${isOpen ? 'rotateDown' : 'rotateUp'}`} />
+          </div>
+        <div className={`expandable-text ${isOpen ? 'expanded' : ''}`}> 
+          {Array.isArray(content) ? content.map((title, id) => {
+            return (
+              <p key={id}>{title}</p>
+            )
+          }) : <p>{content}</p>}
+        </div>
+      </div>
+      </>
+    );
+  }

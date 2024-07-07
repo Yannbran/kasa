@@ -1,0 +1,115 @@
+
+@import 'colors.scss';
+@import 'main.scss';
+
+
+.collapse { 
+  width: 100%;
+  font-size: 2.5vw;
+  height: auto;
+
+  &_title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-2;
+    color: $color-1;
+    border-radius: 0.5vw;
+    font-weight: 500;
+    font-size: 2vw;
+    padding: 1vw 2vw;
+    cursor: pointer; 
+    
+  }
+h3 {
+  margin: 0;
+}
+
+  &_content {
+    flex-direction: column;
+    justify-content: left;
+    border-radius: 10px;
+    opacity: 1;
+    background-color: $color-3;
+    transition: visibility 1s ease-in-out, opacity 1s ease-in-out;
+  }
+
+  &_content_hidden {
+    
+    visibility: hidden;
+    height: 0px;
+  }
+  p {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1.55vw ;
+    font-weight: 500;
+    color: $color-4;
+    margin: 0;
+    padding: 0 4vw 0.5vw 1.5vw;
+  }
+  p:first-child {
+    padding-top: 2vw;
+  }
+  p:last-child {
+    padding-bottom: 2vw;
+  }
+} 
+
+@keyframes rotateDown {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-180deg);
+    }
+  }
+  @keyframes rotateUp {
+    from {
+      transform: rotate(180deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .rotateDown {
+    animation: rotateDown 0.3s linear forwards;
+  }
+  .rotateUp {
+    animation: rotateUp 0.3s linear forwards;
+  }
+.collapse_slider {
+  display: flex;
+  justify-content: space-between;
+  gap: 7vw;
+  margin: auto;
+  width: 100%;
+
+  &_item1, &_item2 {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .collapse_slider {
+    flex-direction: column;
+    gap: 3vw;
+    margin-top: 2vw;
+    margin-bottom: 5vw;
+    &_item1, &_item2 {
+      width: 100%;
+    }
+   
+  } 
+  .collapse_title {
+    height: 3vw;
+    font-size: 2.5vw;
+    font-weight: 600;
+  }
+ .collapse_content p {
+  font-size: 2vw;
+  text-align: left;
+ }
+}

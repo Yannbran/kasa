@@ -1,13 +1,12 @@
 @import './colors.scss';
 
-.header {
+header {
     display: flex;
     justify-content: space-between;
     align-content: center;
     margin: 0 4vw 0 4vw;
     height: 10vw;
-
-    .img {
+    .logo {
         object-fit: contain;
         width: 15vw;
     }
@@ -30,9 +29,9 @@
         display: flex;
         color: $color-4;
         font-size: 2vw;
-        font-weight: 500;
+        font-weight: 600;
         padding: 0;
-        margin: 4vw 0 0 5vw;
+        margin: 4vw 0 0 7vw;
        }
     .about {
         text-decoration: underline;
@@ -40,3 +39,21 @@
 }
 
 
+@media screen and (max-width: 600px) {
+    header {
+       height: 20vw;
+       align-items: center;
+       
+       .logo {
+        width: 40%;
+      }
+        nav {
+        width: 60%;
+        margin-bottom: 2vw;
+        }
+        .link p {
+            font-size: 4vw;
+        }
+    }
+  }
+ 
