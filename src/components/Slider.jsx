@@ -49,78 +49,71 @@ export default function Slider() {
   return (
     <body>
       <main>
-        
-          <div className="slider">
-            <img
-              className="slider-img"
-              src={Datas[index].cover}
-              alt={Datas[index].title}
-            />
-            <FontAwesomeIcon
-              className="chevron chevron-left"
-              icon={faChevronLeft}
-              onClick={prevSlide}
-            />
-            <FontAwesomeIcon
-              className="chevron chevron-right"
-              icon={faChevronRight}
-              onClick={nextSlide}
-            />
-            <p id="number">
-              {index + 1}/{Datas.length}
-            </p>
+        <div className="slider">
+          <img
+            className="slider_img"
+            src={Datas[index].cover}
+            alt={Datas[index].title}
+          />
+          <FontAwesomeIcon
+            className="chevron chevron_left"
+            icon={faChevronLeft}
+            onClick={prevSlide}
+          />
+          <FontAwesomeIcon
+            className="chevron chevron_right"
+            icon={faChevronRight}
+            onClick={nextSlide}
+          />
+          <p id="number">
+            {index + 1}/{Datas.length}
+          </p>
+        </div>
+
+        <div className="slider-container">
+          <div className="slider-content-one">
+            <div id="title">
+              <h2>{Datas[index].title}</h2>
+            </div>
+            <p id="location">{Datas[index].location}</p>
+            <div id="tag">
+              {Datas[index].tags.map((tag, i) => (
+                <p id="tag_name" key={i}>
+                  {tag}
+                </p>
+              ))}
+            </div>
           </div>
 
-          <div className="slider-container">
-
-            <div className="slider-content-one">
-              <div id="title">
-                <h2>{Datas[index].title}</h2>
-              </div>
-              <p id="location">{Datas[index].location}</p>
-              <div id="tags">
-                {Datas[index].tags.map((tag, i) => (
-                  <p id="tag-name" key={i}>
-                    {tag}
-                  </p>
-                ))}
-              </div>
-            </div>
-
-            <div className="slider-content-two">
-                <div className="identity">
-              <div className="host-name">
+          <div className="slider-content-two">
+            <div className="identity">
+              <div className="host_name">
                 {Datas[index].host.name.split(" ").map((part, i) => (
-                  <div key={i} className="host-name-part">
+                  <div key={i} className="host_name_part">
                     {part}
                   </div>
                 ))}
               </div>
               <div id="rond"></div>
-              </div>
-              <div className="rating">
-                {" "}
-                <Rating rating={Datas[index].rating} />
-              </div>
+            </div>
+            <div className="rating">
+              {" "}
+              <Rating rating={Datas[index].rating} />
             </div>
           </div>
-         
-       
-          <div className="collapse_slider">
-					<div className="collapse_slider_item1">
-						<Collapse title={'Description'} content={Datas[index].description}/>
-					</div>
-					<div className="collapse_slider_item2">
-						<Collapse title={'Équipements'} content={Datas[index].equipments}/>
-					</div>
-				</div>
-       
-      
-           
-          
-          
-         
+        </div>
 
+        <div className="collapse_slider">
+          <div className="collapse_slider_item1">
+            <Collapse
+              title={"Description"}
+              content={Datas[index].description}
+            />
+          </div>
+          <div className="collapse_slider_item2">
+            <Collapse title={"Équipements"} content={Datas[index].equipments} />
+          </div>
+        </div>
       </main>
     </body>
   );

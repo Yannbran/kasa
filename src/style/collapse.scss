@@ -1,9 +1,7 @@
+@import "colors.scss";
+@import "main.scss";
 
-@import 'colors.scss';
-@import 'main.scss';
-
-
-.collapse { 
+.collapse {
   width: 100%;
   font-size: 2.5vw;
   height: auto;
@@ -15,16 +13,15 @@
     align-items: center;
     background-color: $color-2;
     color: $color-1;
-    border-radius: 0.5vw;
+    border-radius: 1vw;
     font-weight: 500;
     font-size: 2vw;
     padding: 1vw 2vw;
-    cursor: pointer; 
-    
+    cursor: pointer;
   }
-h3 {
-  margin: 0;
-}
+  h3 {
+    margin: 0;
+  }
 
   &_content {
     flex-direction: column;
@@ -36,14 +33,13 @@ h3 {
   }
 
   &_content_hidden {
-    
     visibility: hidden;
     height: 0px;
   }
   p {
     display: flex;
     justify-content: flex-start;
-    font-size: 1.55vw ;
+    font-size: 1.55vw;
     font-weight: 500;
     color: $color-4;
     margin: 0;
@@ -55,61 +51,62 @@ h3 {
   p:last-child {
     padding-bottom: 2vw;
   }
-} 
+}
 
 @keyframes rotateDown {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(-180deg);
-    }
+  from {
+    transform: rotate(0deg);
   }
-  @keyframes rotateUp {
-    from {
-      transform: rotate(180deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(-180deg);
   }
-  .rotateDown {
-    animation: rotateDown 0.3s linear forwards;
+}
+@keyframes rotateUp {
+  from {
+    transform: rotate(180deg);
   }
-  .rotateUp {
-    animation: rotateUp 0.3s linear forwards;
+  to {
+    transform: rotate(360deg);
   }
+}
+.rotateDown {
+  animation: rotateDown 0.3s linear forwards;
+}
+.rotateUp {
+  animation: rotateUp 0.3s linear forwards;
+}
 .collapse_slider {
   display: flex;
   justify-content: space-between;
   gap: 7vw;
   margin: auto;
   width: 100%;
+  margin: 0.5vw 0 3.5vw 0;
 
-  &_item1, &_item2 {
+  &_item1,
+  &_item2 {
     width: 50%;
   }
 }
 
 @media screen and (max-width: 600px) {
-
   .collapse_slider {
     flex-direction: column;
     gap: 3vw;
     margin-top: 2vw;
     margin-bottom: 5vw;
-    &_item1, &_item2 {
+    &_item1,
+    &_item2 {
       width: 100%;
     }
-   
-  } 
+  }
   .collapse_title {
     height: 3vw;
     font-size: 2.5vw;
     font-weight: 600;
   }
- .collapse_content p {
-  font-size: 2vw;
-  text-align: left;
- }
+  .collapse_content p {
+    font-size: 2vw;
+    text-align: left;
+  }
 }

@@ -1,14 +1,14 @@
-@import './colors.scss';
+@import "./colors.scss";
 
 .expandable-bar {
-    margin: 2.5vw 7vw;
-    height: auto;
-  }
+  margin: 2.5vw 7vw;
+  height: auto;
+}
 #text {
   margin-top: 2vw;
 }
-  @media screen and (max-width: 600px) {
-    .expandable-bar {
-        margin: 3.5vw 0;
-      }
+@media screen and (max-width: 600px) {
+  .expandable-bar {
+    margin: 3.5vw 0;
   }
+}
