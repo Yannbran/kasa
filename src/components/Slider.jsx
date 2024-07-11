@@ -18,14 +18,27 @@ export default function Slider() {
   const ids = Datas.map((data) => data.id); // Crée un tableau d'identifiants
   const currentIndex = ids.indexOf(id); // Trouve l'index de l'identifiant actuel
 
-  const [index, setIndex] = useState(currentIndex); // Utilise cet index pour le state initial
+  const [index] = useState(currentIndex); // Utilise cet index pour le state initial
 
-  const nextSlide = () => {
-    setIndex((prevIndex) => (prevIndex + 1) % Datas.length);
+ 
+
+  const images = [...Datas[index].pictures];
+
+  // Utilisez un autre état pour l'index de l'image
+  const [imageIndex, setImageIndex] = useState(0);
+
+  const nextImage = () => {
+    setImageIndex((prevImageIndex) => {
+      const newIndex = (prevImageIndex + 1) % images.length;
+      return newIndex;
+    });
   };
-
-  const prevSlide = () => {
-    setIndex((prevIndex) => (prevIndex - 1 + Datas.length) % Datas.length);
+  
+  const prevImage = () => {
+    setImageIndex((prevImageIndex) => {
+      const newIndex = (prevImageIndex - 1 + images.length) % images.length;
+      return newIndex;
+    });
   };
 
   const Rating = ({ rating }) => {
@@ -51,22 +64,26 @@ export default function Slider() {
       <div className="slider">
         <img
           className="slider_img"
-          src={Datas[index].cover}
+          src={images[imageIndex]} 
           alt={Datas[index].title}
         />
-        <FontAwesomeIcon
-          className="chevron chevron_left"
-          icon={faChevronLeft}
-          onClick={prevSlide}
-        />
-        <FontAwesomeIcon
-          className="chevron chevron_right"
-          icon={faChevronRight}
-          onClick={nextSlide}
-        />
-        <p id="number">
-          {index + 1}/{Datas.length}
-        </p>
+             {images.length > 1 && (
+          <>
+            <FontAwesomeIcon
+              className="chevron chevron_left"
+              icon={faChevronLeft}
+              onClick={prevImage}
+            />
+            <FontAwesomeIcon
+              className="chevron chevron_right"
+              icon={faChevronRight}
+              onClick={nextImage}
+            />
+            <p id="number">
+              {imageIndex + 1}/{images.length}
+            </p>
+          </>
+        )}
       </div>
 
       <div className="slider-container">

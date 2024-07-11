@@ -11,7 +11,7 @@ export default function Bandeau() {
     image = ImgBandeau;
     altText = "photo représentant la mer";
     imgClass = "img-base img-acceuil";
-  } else if (location.pathname === "/src/pages/About") {
+  } else if (location.pathname === "/About") {
     image = ImgAbout;
     altText = "photo représentant la montagne";
     imgClass = "img-base img-about";
@@ -21,7 +21,7 @@ export default function Bandeau() {
       <div className="img-base">
         <img src={image} alt={altText} className={imgClass} />
         {location.pathname === "/" && <h1>Chez vous, partout et ailleurs</h1>}
-        {location.pathname === "/src/pages/About"}
+        {location.pathname === "/About"}
       </div>
     </div>
   );

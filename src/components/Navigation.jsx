@@ -3,7 +3,7 @@ import "../style/header.scss";
 
 export default function Navigation() {
   const matchAccueil = useMatch("/");
-  const matchAbout = useMatch("/src/pages/About");
+  const matchAbout = useMatch("/About");
 
   return (
     <nav>
@@ -13,7 +13,7 @@ export default function Navigation() {
             Accueil
           </p>
         </Link>
-        <Link to="/src/pages/About" className="link">
+        <Link to="/About" className="link">
           <p className={matchAbout ? "link-text link-about" : "link-text"}>
             À propos
           </p>
