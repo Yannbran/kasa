@@ -1,10 +1,10 @@
 import datas from "../data/data";
 import Card from "../components/Card";
-import "../style/gallery.scss";
+import "../style/card&gallery.scss";
 
 export default function Gallery() {
   return (
-    <main className="home-gallery">
+    <main className="gallery">
       {datas.map((data) => {
         return (
           <Card
