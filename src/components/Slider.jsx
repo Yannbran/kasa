@@ -10,71 +10,101 @@ import {
   faStar as fullStar,
 } from "@fortawesome/free-solid-svg-icons";
 import { faStar as emptyStar } from "@fortawesome/free-solid-svg-icons";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import Collapse from "./Collapse";
 
 // Définition du composant Slider
 export default function Slider() {
-  // Récupération de l'ID à partir des paramètres de l'URL
+  // J'utilise useParams pour extraire l'ID du logement à partir 
+  //des paramètres de l'URL
   const { id } = useParams();
 
-  // Création d'un tableau d'identifiants à partir des données
-  const ids = Datas.map((data) => data.id); 
+  // Je crée un tableau d'identifiants (ids) en parcourant les données (Datas)
+  // et en extrayant l'ID de chaque élément
+  const ids = Datas.map((data) => data.id);
 
-  // Trouver l'index de l'identifiant actuel dans le tableau d'identifiants
-  const currentIndex = ids.indexOf(id); 
+  // J'utilise la méthode indexOf pour trouver l'index de l'ID actuel dans
+  // le tableau d'identifiants (ids)
+  // Si l'ID n'est pas trouvé, indexOf retourne -1
+  const currentIndex = ids.indexOf(id);
 
-  // Utilisation de cet index pour définir l'état initial de l'index
+  // J'utilise le Hook useState pour créer une variable d'état (index) et 
+  //initialiser sa valeur à currentIndex
   const [index] = useState(currentIndex); 
 
-  // Création d'un tableau d'images à partir des données de l'élément actuel
-  const images = [...Datas[index].pictures];
-
-  // Définition d'un autre état pour l'index de l'image
+  // J'utilise le Hook useState pour créer une autre variable d'état 
+  //(imageIndex) qui représente l'index de l'image actuellement affichée
+  // J'initialise imageIndex à 0, ce qui signifie que la première image 
+  //sera affichée par défaut
   const [imageIndex, setImageIndex] = useState(0);
 
-  // Appel de la fonction setImageIndex qui est utilisée pour mettre à jour l'état imageIndex.
+  // Si l'index est -1 (ce qui signifie que l'ID n'a pas été trouvé dans les 
+  //données), je renvoie un composant Navigate qui redirige l'utilisateur 
+  //vers la page d'erreur
+  if (index === -1) {
+    return <Navigate to="/Error" />;
+  }
+
+  // Je crée un tableau d'images en extrayant le tableau de pictures de 
+  //l'élément actuel dans les données (Datas[index])
+  const images = [...Datas[index].pictures];
+
+  // Je définis une fonction (nextImage) pour passer à l'image suivante dans 
+  //le diaporama
   const nextImage = () => {
-    // Calcul du nouvel index. On ajoute 1 à l'index actuel pour passer à l'image suivante.
+    // J'utilise la fonction setImageIndex pour mettre à jour l'état imageIndex
     setImageIndex((prevImageIndex) => {
-      // L'opérateur modulo (%) est utilisé pour créer un effet de boucle dans le diaporama.
-    // Si l'index atteint la fin du tableau d'images, il reviendra à 0 (le début du tableau).
+      // Je calcule le nouvel index en ajoutant 1 à l'index de l'image 
+      //actuelle (prevImageIndex) et en utilisant l'opérateur modulo (%) 
+      //avec la longueur du tableau d'images
+      // Cela permet de créer un effet de boucle dans le diaporama 
+      //(lorsque l'index atteint la fin du tableau d'images, il revient à 0)
       const newIndex = (prevImageIndex + 1) % images.length;
-      // Retourne le nouvel index qui sera utilisé pour mettre à jour l'état imageIndex.
+
+      // Je retourne le nouvel index qui sera utilisé pour mettre à jour 
+      //l'état imageIndex
       return newIndex;
-    });
-  };
+  });
+};
   
-  // Fonction pour revenir à l'image précédente
-  const prevImage = () => {
-    setImageIndex((prevImageIndex) => {
-      const newIndex = (prevImageIndex - 1 + images.length) % images.length;
-      return newIndex;
-    });
-  };
+// Fonction pour passer à l'image précédente
+const prevImage = () => {
+  // On met à jour l'index de l'image
+  setImageIndex((prevImageIndex) => {
+    // On calcule le nouvel index pour revenir à l'image précédente
+    const newIndex = (prevImageIndex - 1 + images.length) % images.length;
+    // On retourne le nouvel index
+    return newIndex;
+  });
+};
 
-  // Composant pour afficher la note sous forme d'étoiles
-  const Rating = ({ rating }) => {
-    const totalStars = 5;
-    let stars = [];
+// Composant pour afficher la note sous forme d'étoiles
+const Rating = ({ rating }) => {
+  // Nombre total d'étoiles
+  const totalStars = 5;
+  // Tableau pour stocker les étoiles
+  let stars = [];
 
-    // Boucle pour générer les étoiles
-    for (let i = 0; i < totalStars; i++) {
-      if (i < rating) {
-        stars.push(
-          <FontAwesomeIcon className="star filled" key={i} icon={fullStar} />
-        ); // étoile remplie
-      } else {
-        stars.push(
-          <FontAwesomeIcon className="star empty" key={i} icon={emptyStar} />
-        ); // étoile grise
-      }
+  // Boucle pour générer les étoiles
+  for (let i = 0; i < totalStars; i++) {
+    // Si l'index est inférieur à la note, on ajoute une étoile remplie
+    if (i < rating) {
+      stars.push(
+        <FontAwesomeIcon className="star filled" key={i} icon={fullStar} />
+      );
+    } else {
+      // Sinon, on ajoute une étoile grise
+      stars.push(
+        <FontAwesomeIcon className="star empty" key={i} icon={emptyStar} />
+      );
     }
-    return <div className="rating">{stars}</div>;
-  };
+  }
+  // On retourne un div contenant toutes les étoiles
+  return <div className="rating">{stars}</div>;
+};
+
 
   // Rendu du composant
-
   return (
     <main>
       <div className="slider">
