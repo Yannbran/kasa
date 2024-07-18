@@ -6,7 +6,7 @@ export default function Card({ id, title, cover, style }) {
     <div className="card" style={style}>
       <Link to={`/Logements/${id}`}>
         <img src={cover} alt={title} style={{ objectFit: "cover" }} />
-        <h3 className="card_title">{title}</h3>
+        <h2 className="card_title">{title}</h2>
       </Link>
     </div>
   );

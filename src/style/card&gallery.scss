@@ -36,7 +36,7 @@
 }
 
 .card img:hover,
-img:hover + h3 {
+img:hover + h2 {
   transform: scale(1.1);
   transition: transform 0.3s ease-in-out;
   filter: brightness(110%);
@@ -51,7 +51,7 @@ img:hover + h3 {
     height: 70vw;
   }
   .card img:hover,
-  img:hover + h3 {
+  img:hover + h2 {
     transform: none;
     transition: none;
     filter: none;
