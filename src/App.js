@@ -7,6 +7,7 @@ import About from './pages/About';
 import Error from './pages/Error';
 import Logements from './pages/Logements';
 
+// Définition des routes
 const router = createBrowserRouter([
   
   {
