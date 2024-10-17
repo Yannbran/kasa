@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/mon-projet-react/static/css/main.b6888aad.css",
-    "main.js": "/mon-projet-react/static/js/main.802b7378.js",
-    "static/js/453.9701a2b0.chunk.js": "/mon-projet-react/static/js/453.9701a2b0.chunk.js",
-    "static/media/Image source 2.png": "/mon-projet-react/static/media/Image source 2.abab3f12f4cb82f1dfa1.png",
-    "static/media/Image source 1.png": "/mon-projet-react/static/media/Image source 1.d00ae7dd3ef927bb988d.png",
-    "index.html": "/mon-projet-react/index.html",
-    "main.b6888aad.css.map": "/mon-projet-react/static/css/main.b6888aad.css.map",
-    "main.802b7378.js.map": "/mon-projet-react/static/js/main.802b7378.js.map",
-    "453.9701a2b0.chunk.js.map": "/mon-projet-react/static/js/453.9701a2b0.chunk.js.map"
+    "main.css": "/kasa/static/css/main.b6888aad.css",
+    "main.js": "/kasa/static/js/main.d1f032d8.js",
+    "static/js/453.9701a2b0.chunk.js": "/kasa/static/js/453.9701a2b0.chunk.js",
+    "static/media/Image source 2.png": "/kasa/static/media/Image source 2.abab3f12f4cb82f1dfa1.png",
+    "static/media/Image source 1.png": "/kasa/static/media/Image source 1.d00ae7dd3ef927bb988d.png",
+    "index.html": "/kasa/index.html",
+    "main.b6888aad.css.map": "/kasa/static/css/main.b6888aad.css.map",
+    "main.d1f032d8.js.map": "/kasa/static/js/main.d1f032d8.js.map",
+    "453.9701a2b0.chunk.js.map": "/kasa/static/js/453.9701a2b0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b6888aad.css",
-    "static/js/main.802b7378.js"
+    "static/js/main.d1f032d8.js"
   ]
 }
